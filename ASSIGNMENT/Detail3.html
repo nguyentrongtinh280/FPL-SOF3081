@@ -29,10 +29,13 @@
         color: white;
         padding: 15px 0;
       }
+      body {
+        padding-top: 80px;
+      }
     </style>
   </head>
   <body>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
       <div class="container">
         <a class="navbar-brand" href="index.html">
           <img
@@ -92,10 +95,29 @@
                 <i class="fa-solid fa-user"></i> Tài khoản
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Đăng nhập</a></li>
-                <li><a class="dropdown-item" href="#">Quên mật khẩu</a></li>
                 <li>
-                  <a class="dropdown-item" href="#">Đăng ký thành viên</a>
+                  <a
+                    class="dropdown-item"
+                    data-bs-toggle="modal"
+                    data-bs-target="#loginModal"
+                    >Đăng nhập</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    data-bs-toggle="modal"
+                    data-bs-target="#registerModal"
+                    >Đăng ký thành viên</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    data-bs-toggle="modal"
+                    data-bs-target="#forgotPasswordModal"
+                    >Quên mật khẩu</a
+                  >
                 </li>
               </ul>
             </li>
@@ -256,6 +278,243 @@
               </ul>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="loginModal">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <form class="p-3 was-validated">
+            <div class="row justify-content-center">
+              <div class="col-md-6">
+                <br />
+                <h3 class="text-danger text-center fw-bold">Đăng nhập</h3>
+                <br />
+                <div class="card p-4">
+                  <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      placeholder="Nhập Email"
+                      required
+                    />
+                    <div class="valid-feedback">Hợp lệ</div>
+                    <div class="invalid-feedback">Vui lòng nhập Email!</div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">Mật khẩu</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      placeholder="Nhập mật khẩu"
+                      required
+                    />
+                    <div class="valid-feedback">Hợp lệ</div>
+                    <div class="invalid-feedback">Vui lòng nhập mật khẩu!</div>
+                  </div>
+
+                  <div>
+                    <button type="submit" class="btn btn-primary w-100">
+                      Đăng nhập
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="registerModal">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <form class="p-3 was-validated">
+            <div class="row">
+              <div class="col-12">
+                <br />
+                <h3 class="text-danger text-center fw-bold">
+                  Thông tin cá nhân
+                </h3>
+                <br />
+                <div class="card p-4">
+                  <div class="mb-3">
+                    <label class="form-label">Họ và tên</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Nhập họ và tên"
+                      required
+                    />
+                    <div class="valid-feedback">Hợp lệ</div>
+                    <div class="invalid-feedback">Vui lòng nhập họ và tên!</div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      placeholder="Nhập email"
+                      required
+                    />
+                    <div class="valid-feedback">Hợp lệ</div>
+                    <div class="invalid-feedback">Vui lòng nhập Email!</div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">Số điện thoại</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Nhập số điện thoại"
+                      pattern="[0-9]{10}"
+                      required
+                    />
+                    <div class="valid-feedback">Hợp lệ</div>
+                    <div class="invalid-feedback">
+                      Số điện thoại phải gồm đúng 10 chữ số!
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">Mật khẩu</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      placeholder="Nhập mật khẩu"
+                      required
+                    />
+                    <div class="valid-feedback">Hợp lệ</div>
+                    <div class="invalid-feedback">Vui lòng nhập mật khẩu!</div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">Xác nhận mật khẩu</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      placeholder="Nhập xác nhận mật khẩu"
+                      required
+                    />
+                    <div class="valid-feedback">Hợp lệ</div>
+                    <div class="invalid-feedback">
+                      Vui lòng nhập xác nhận mật khẩu!
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">Giới tính</label>
+                    <div class="form-check form-check-inline">
+                      <input
+                        type="radio"
+                        name="gender"
+                        class="form-check-input"
+                        required
+                      />
+                      <label class="form-check-label">Nam</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                      <input
+                        type="radio"
+                        name="gender"
+                        class="form-check-input"
+                      />
+                      <label class="form-check-label">Nữ</label>
+                    </div>
+                    <div class="valid-feedback">Hợp lệ</div>
+                    <div class="invalid-feedback d-block">
+                      Vui lòng chọn giới tính!
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">Ngôn ngữ</label>
+                    <select class="form-select" required>
+                      <option value="" selected disabled>Chọn ngôn ngữ</option>
+                      <option>Tiếng Việt</option>
+                      <option>Tiếng Anh</option>
+                      <option>Tiếng Trung</option>
+                      <option>Tiếng Nhật</option>
+                      <option>Tiếng Hàn</option>
+                      <option>Tiếng Lào</option>
+                      <option>Tiếng Thái Lan</option>
+                    </select>
+
+                    <div class="valid-feedback">Hợp lệ</div>
+                    <div class="invalid-feedback">Vui lòng chọn ngôn ngữ!</div>
+                  </div>
+
+                  <div class="mb-3">
+                    <div class="form-check">
+                      <input
+                        type="checkbox"
+                        class="form-check-input"
+                        required
+                      />
+                      <label class="form-check-label"
+                        >Tôi đồng ý với các điều khoản và điều kiện.</label
+                      >
+                    </div>
+                    <div class="valid-feedback">Hợp lệ</div>
+                    <div class="invalid-feedback">Vui lòng đồng ý!</div>
+                  </div>
+
+                  <div>
+                    <button type="submit" class="btn btn-primary w-100">
+                      Đăng kí
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="forgotPasswordModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+
+          <form class="p-3 was-validated">
+            <div class="mb-3">
+              <p class="text-muted small">Nhập email để xác nhận OTP</p>
+              <input
+                type="email"
+                class="form-control mb-3"
+                placeholder="Nhập email"
+                required
+              />
+              <div class="valid-feedback">Hợp lệ</div>
+              <div class="invalid-feedback">Vui lòng nhập email</div>
+            </div>
+            <button class="btn btn-warning w-100">Gửi yêu cầu</button>
+          </form>
         </div>
       </div>
     </div>
