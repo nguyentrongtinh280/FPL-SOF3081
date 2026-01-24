@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang đăng bài viết</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
+      .blog-aside-img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 4px;
+      }
+      .footer-custom {
+        background-color: #212529;
+        color: white;
+        padding: 15px 0;
+      }
+      .box {
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        background-color: #fff;
+      }
+
+      .box-header {
+        padding: 10px 15px;
+        border-bottom: 1px solid #ddd;
+        color: #17a2b8;
+        font-weight: 600;
+      }
+
+      .box-body {
+        padding: 15px;
+      }
+
+      .feature-img {
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+            src="images/logo-energy-pilates.png"
+            alt="Logo"
+            style="width: 150px"
+          />
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapsibleNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">
+                <i class="fa-solid fa-house"></i>Trang chủ
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Post.html">
+                <i class="fa-solid fa-list"></i> Bài viết
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fa-solid fa-film"></i> Video
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fa-solid fa-circle-info"></i> Giới thiệu
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fa-solid fa-calendar-days"></i> Sự kiện
+              </a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+              >
+                <i class="fa-solid fa-user"></i> Tài khoản
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Đăng nhập</a></li>
+                <li><a class="dropdown-item" href="#">Quên mật khẩu</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Đăng ký thành viên</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Tiếng Việt</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Tiếng Anh</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-3">
+      <div id="carouselExampleDark" class="carousel carousel-dark slide">
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleDark"
+            data-bs-slide-to="0"
+            class="active"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleDark"
+            data-bs-slide-to="1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleDark"
+            data-bs-slide-to="2"
+          ></button>
+        </div>
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <a href="Detail1.html" class="text-decoration-none text-dark">
+              <img
+                src="images/banner1.jpg"
+                class="d-block w-100"
+                alt="Hình 1"
+              />
+            </a>
+          </div>
+          <div class="carousel-item">
+            <a href="Detail2.html" class="text-decoration-none text-dark">
+              <img
+                src="images/banner2.jpg"
+                class="d-block w-100"
+                alt="Hình 2"
+              />
+            </a>
+          </div>
+          <div class="carousel-item">
+            <a href="Detail3.html" class="text-decoration-none text-dark">
+              <img
+                src="images/banner3.jpg"
+                class="d-block w-100"
+                alt="Hình 3"
+              />
+            </a>
+          </div>
+        </div>
+
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleDark"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleDark"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="container mt-4">
+      <div class="row">
+        <aside class="col-sm-4">
+          <div class="mt-2">
+            <h3 class="text-info mb-3">Chuyên mục</h3>
+            <ul class="list-group">
+              <li
+                class="list-group-item active d-flex justify-content-between align-items-center bg-info border-info"
+              >
+                Chế độ tập <span class="badge bg-primary rounded-pill">12</span>
+              </li>
+              <li
+                class="list-group-item d-flex justify-content-between align-items-center"
+              >
+                Chế độ dinh dưỡng
+                <span class="badge bg-primary rounded-pill">15</span>
+              </li>
+              <li
+                class="list-group-item d-flex justify-content-between align-items-center"
+              >
+                Cẩm nang cuộc sống
+                <span class="badge bg-primary rounded-pill">99</span>
+              </li>
+            </ul>
+            <div class="box mt-4">
+              <h4 class="box-header text-info">Bài viết nổi bật</h4>
+
+              <div class="box-body">
+                <div class="d-flex mb-3">
+                  <img
+                    src="images/spinach_300x300.jpg"
+                    class="feature-img me-3"
+                  />
+                  <div>
+                    <strong>Lợi ích khi ăn rau mỗi ngày</strong>
+                    <p class="small text-muted mb-0">
+                      Tiêu thụ rau xanh hàng ngày giúp tăng cường sức khỏe...
+                    </p>
+                  </div>
+                </div>
+
+                <div class="d-flex mb-3">
+                  <img src="images/corevalue.jpg" class="feature-img me-3" />
+                  <div>
+                    <strong>9 tác dụng tuyệt vời của quả cam</strong>
+                    <p class="small text-muted mb-0">
+                      Cam giàu vitamin C giúp chống oxy hóa...
+                    </p>
+                  </div>
+                </div>
+
+                <div class="d-flex">
+                  <img
+                    src="images/orange_300x300.jpg"
+                    class="feature-img me-3"
+                  />
+                  <div>
+                    <strong>10 công dụng bất ngờ từ dầu dừa</strong>
+                    <p class="small text-muted mb-0">
+                      Dầu dừa giúp dưỡng ẩm và làm đẹp da...
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <main class="col-sm-8">
+          <div class="mt-2">
+            <h3 class="text-info mb-3">Tất cả bài viết</h3>
+            <div class="box">
+              <div class="box-body">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <a
+                      href="Detail1.html"
+                      class="text-decoration-none text-dark"
+                    >
+                      <div class="card h-100">
+                        <div class="card-header bg-white fw-semibold">
+                          Tập Pilates là phương pháp luyện tập kết hợp kiểm soát
+                          hơi thở, chuyển động có ý thức.
+                          <span class="float-end text-muted">
+                            <i class="fa-regular fa-comment"></i>16
+                          </span>
+                        </div>
+                        <img
+                          src="images/tap-piltes.jpg"
+                          alt="Tập Pilates"
+                          class="card-img-top"
+                        />
+                        <div class="card-body">
+                          <p class="small">
+                            Tập Pilates là phương pháp luyện tập kết hợp kiểm
+                            soát hơi thở, chuyển động có ý thức, tập trung vào
+                            nhóm cơ trung tâm (core) để tăng cường sức mạnh, sự
+                            linh hoạt, cải thiện tư thế và vóc dáng, có thể tập
+                            trên thảm hoặc thiết bị chuyên dụng. Các bài tập này
+                            giúp cơ thể săn chắc, giảm mỡ bụng, thư giãn tinh
+                            thần và rất phù hợp cho người mới bắt đầu, ít vận
+                            động, hoặc phục hồi sau chấn thương.
+                          </p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-md-6">
+                    <a
+                      href="Detail4.html"
+                      class="text-decoration-none text-dark"
+                    >
+                      <div class="card h-100">
+                        <div class="card-header bg-white fw-semibold">
+                          Tập thể dục là một hoạt động rất có lợi cho sức khỏe
+                          <span class="float-end text-muted">
+                            <i class="fa-regular fa-comment"></i>16
+                          </span>
+                        </div>
+                        <img
+                          src="images/tap-the-duc2.jpg"
+                          alt="Tập Pilates"
+                          class="card-img-top"
+                        />
+                        <div class="card-body">
+                          <p class="small">
+                            Chính đồng hồ sinh học của cơ thể sẽ quyết định bạn
+                            là “cú đêm” hay ưa dậy sớm. Những nhịp sinh học này
+                            tác động đến các chức năng của cơ thể như chỉ số
+                            huyết áp, nhiệt độ cơ thể, mức độ hormone hay nhịp
+                            tim, tất cả đều đóng vai trò quan trọng trong việc
+                            xác định cơ thể bạn có sẵn sàng tập thể dục hay
+                            không.
+                          </p>
+                          <p class="small">
+                            Sử dụng đồng hồ sinh học của cơ thể để biết khi nào
+                            nên tập thể dục, đi bộ hoặc đến phòng tập gym là ý
+                            tưởng hay, tuy nhiên bạn sẽ phải cân nhắc những yếu
+                            tố bên ngoài như lịch trình công việc, gia đình,
+                            thời gian rảnh rỗi nữa.
+                          </p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <br />
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <a
+                      href="Detail2.html"
+                      class="text-decoration-none text-dark"
+                    >
+                      <div class="card h-100">
+                        <div class="card-header bg-white fw-semibold">
+                          Tim mạch là nhóm bệnh lý liên quan đến tim và mạch máu
+                          <span class="float-end text-muted">
+                            <i class="fa-regular fa-comment"></i>16
+                          </span>
+                        </div>
+                        <img
+                          src="images/tim-mach.jpg"
+                          alt="Tập Pilates"
+                          class="card-img-top"
+                        />
+                        <div class="card-body">
+                          <p class="small">
+                            Tim mạch là nhóm bệnh lý liên quan đến tim và mạch
+                            máu, bao gồm các bệnh như cao huyết áp, bệnh mạch
+                            vành, đột quỵ, suy tim, thấp tim, v.v., đang là
+                            nguyên nhân gây tử vong hàng đầu thế giới, có xu
+                            hướng trẻ hóa do lối sống không lành mạnh (hút
+                            thuốc, ít vận động, ăn uống kém), nhưng có thể phòng
+                            ngừa và kiểm soát bằng thay đổi lối sống, thăm khám
+                            định kỳ.
+                          </p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-md-6">
+                    <a
+                      href="Detail3.html"
+                      class="text-decoration-none text-dark"
+                    >
+                      <div class="card h-100">
+                        <div class="card-header bg-white fw-semibold">
+                          Quản trị Marketing (Marketing Management) là quá trình
+                          phân tích, lập kế hoạch
+                          <span class="float-end text-muted">
+                            <i class="fa-regular fa-comment"></i>16
+                          </span>
+                        </div>
+                        <img
+                          src="images/Marketing.png"
+                          alt="Tập Pilates"
+                          class="card-img-top"
+                        />
+                        <div class="card-body">
+                          <p class="small">
+                            Quản trị Marketing (Marketing Management) là quá
+                            trình phân tích, lập kế hoạch, thực hiện và kiểm
+                            soát các hoạt động tiếp thị nhằm xây dựng, củng cố
+                            và duy trì những trao đổi có lợi với khách hàng mục
+                            tiêu, qua đó đạt được mục tiêu kinh doanh của doanh
+                            nghiệp, bao gồm việc hiểu thị trường, phát triển
+                            chiến lược, quản lý các yếu tố Marketing Mix (4P) và
+                            điều phối các bộ phận để tạo ra giá trị cho khách
+                            hàng.
+                          </p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-2 mb-2">
+                <ul class="pagination justify-content-center">
+                  <li class="page-item">
+                    <a class="page-link" href="#">&laquo;</a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">&raquo;</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <footer class="bg-dark text-white mt-4 p-4">
+      <p class="text-center mb-0">Nâng cao sức khỏe – Cân bằng cuộc sống</p>
+    </footer>
+  </body>
+</html>
