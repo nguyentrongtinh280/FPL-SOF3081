@@ -48,6 +48,11 @@
       body {
         padding-top: 80px;
       }
+      .detail-img {
+        max-height: 420px;
+        width: 100%;
+        object-fit: cover;
+      }
     </style>
   </head>
   <body>
@@ -228,167 +233,86 @@
     </div>
 
     <div class="container mt-4">
-      <div class="row">
-        <div class="col-md-8">
-          <h4 class="text-danger fw-bold">
-            Tim mạch là nhóm bệnh lý liên quan đến tim và mạch máu
-          </h4>
-          <img
-            src="images/tim-mach.jpg"
-            alt="Phương pháp tập Pilates giúp phục hồi chấn thương cột sống"
-            class="img-fluid my-3 rounded shadow-sm detail-img"
-          />
-          <p>
-            Tim mạch là nhóm bệnh lý liên quan đến tim và mạch máu, bao gồm các
-            bệnh như cao huyết áp, bệnh mạch vành, đột quỵ, suy tim, thấp tim,
-            v.v., đang là nguyên nhân gây tử vong hàng đầu thế giới, có xu hướng
-            trẻ hóa do lối sống không lành mạnh (hút thuốc, ít vận động, ăn uống
-            kém), nhưng có thể phòng ngừa và kiểm soát bằng thay đổi lối sống,
-            thăm khám định kỳ.
-          </p>
+      <h3 class="text-danger fw-bold mb-4">
+        <i class="fa-solid fa-calendar-check"></i> Các sự kiện sắp diễn ra
+      </h3>
 
-          <p>
-            Bệnh tim là một tình trạng bệnh lý liên quan đến các rối loạn của hệ
-            thống tim mạch và mạch máu. Các loại bệnh tim thường gặp, có thể kể
-            đến: bệnh mạch vành, tai biến mạch máu não, và tăng huyết áp, và đây
-            là nguyên nhân hàng đầu gây tử vong trên toàn thế giới. Vậy bệnh tim
-            bắt nguồn từ những nguyên nhân gì, có những triệu chứng nhận biết
-            sớm nào và mọi cần làm gì để quá trình phòng ngừa và điều trị đạt
-            hiệu quả tốt nhất.
-          </p>
-          <img
-            src="images/benh-tim-mach.jpg"
-            alt="Tim mạch"
-            class="img-fluid my-3 rounded shadow-sm detail-img"
-          />
-          <ul>
-            <li>Mệt mỏi và kiệt sức</li>
-            <li>Ho dai dẳng</li>
-            <li>Nhịp tim nhanh và không đều</li>
-            <li>Đi tiểu đêm thường xuyên</li>
-          </ul>
-
-          <h6 class="fw-bold">Lời kết</h6>
-          <p>
-            Mặc dù có rất nhiều nguyên nhân dẫn đến chán ăn và buồn nôn, đây
-            cũng là triệu chứng phổ biến của bệnh tim mạch. Người mắc bệnh tim
-            mạch thường cảm thấy no và chán ăn do sự tích tụ dịch trong gan và
-            hệ tiêu hóa.
-          </p>
-        </div>
-
+      <div class="row g-4">
+        <!-- EVENT 1 -->
         <div class="col-md-4">
-          <div class="card mb-3">
-            <div class="card-header fw-bold">Bình luận bài viết</div>
-          </div>
-          <div class="card-body">
-            <textarea
-              class="form-control mb-2"
-              rows="5"
-              placeholder="Nhập bình luận của bạn"
-            ></textarea>
-
-            <button class="btn btn-success w-100">Bình luận</button>
-          </div>
-          <br />
-          <div class="card">
-            <div class="card-header fw-bold">Danh sách các bình luận</div>
+          <div class="card h-100 shadow-sm">
+            <img
+              src="images/tap-the-duc-luc.jpg"
+              class="card-img-top event-img"
+              alt="Pilates cơ bản"
+            />
             <div class="card-body">
-              <ul class="mb-0">
-                <li>Bình luận rất hữu ích</li>
-                <li>Bài viết hay và dễ hiểu</li>
-                <li>Cảm ơn tác giả</li>
-              </ul>
+              <span class="event-date">
+                <i class="fa-solid fa-clock"></i> 20/02/2026
+              </span>
+              <h5 class="card-title mt-2">Workshop Pilates Cơ Bản</h5>
+              <p class="card-text">
+                Dành cho người mới bắt đầu, hướng dẫn các bài tập Pilates nền
+                tảng giúp cải thiện cột sống và hô hấp.
+              </p>
+            </div>
+            <div class="card-footer bg-white border-0">
+              <a href="Detail1.html" class="btn btn-outline-danger w-100">
+                <i class="fa-solid fa-circle-info"></i> Xem chi tiết
+              </a>
             </div>
           </div>
         </div>
-        <br />
-        <div class="card">
-          <div class="card-header fw-bold">
-            <i class="fa-solid fa-newspaper me-1"></i> Bài viết liên quan
+
+        <!-- EVENT 2 -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img
+              src="images/tap-the-duc2.jpg"
+              class="card-img-top event-img"
+              alt="Pilates phục hồi"
+            />
+            <div class="card-body">
+              <span class="event-date">
+                <i class="fa-solid fa-clock"></i> 05/03/2026
+              </span>
+              <h5 class="card-title mt-2">Pilates Phục Hồi Chấn Thương</h5>
+              <p class="card-text">
+                Chương trình đặc biệt cho người gặp vấn đề về cột sống, vai gáy
+                và thắt lưng.
+              </p>
+            </div>
+            <div class="card-footer bg-white border-0">
+              <a href="Detail2.html" class="btn btn-outline-danger w-100">
+                <i class="fa-solid fa-circle-info"></i> Xem chi tiết
+              </a>
+            </div>
           </div>
+        </div>
 
-          <div class="card-body p-2">
-            <a href="Detail1.html" class="text-decoration-none text-dark">
-              <div class="d-flex mb-3">
-                <img
-                  src="images/tap-piltes.jpg"
-                  class="blog-aside-img me-2"
-                  alt="Phương pháp Pilates phục hồi cột sống"
-                />
-                <div>
-                  <h6 class="mb-1">Phương pháp Pilates phục hồi cột sống</h6>
-                  <small class="text-muted"
-                    >Pilates ban đầu được gọi là “Contrology” - một phương pháp
-                    tập thể dục toàn thân giúp người tập cải thiện các hoạt động
-                    hàng ngày. Pilates ngoài việc nhấn mạnh vào sức mạnh cốt lõi
-                    còn tập trung phát triển những mô hình chuyển động chức năng
-                    và bền vững xuyên suốt cơ thể.</small
-                  >
-                </div>
-              </div>
-            </a>
-
-            <a href="Detail2.html" class="text-decoration-none text-dark">
-              <div class="d-flex mb-3">
-                <img
-                  src="images/benh-tim-mach.jpg"
-                  class="blog-aside-img me-2"
-                  alt="Tim mạch là nhóm bệnh lý liên quan đến tim và mạch máu"
-                />
-                <div>
-                  <h6 class="mb-1">
-                    Tim mạch là nhóm bệnh lý liên quan đến tim và mạch máu
-                  </h6>
-                  <small class="text-muted mb-1"
-                    >Bệnh tim là một tình trạng bệnh lý liên quan đến các rối
-                    loạn của hệ thống tim mạch và mạch máu.</small
-                  >
-                </div>
-              </div>
-            </a>
-
-            <a href="Detail3.html" class="text-decoration-none text-dark">
-              <div class="d-flex mb-3">
-                <img
-                  src="images/Marketing.png"
-                  class="blog-aside-img me-2"
-                  alt="Marketing gồm những mảng nào?"
-                />
-                <div>
-                  <h6 class="mb-1">Marketing gồm những mảng nào?</h6>
-                  <small class="text-muted mb-1"
-                    >Theo một số tài liệu thì thuật ngữ Marketing xuất hiện lần
-                    đầu tiên tại Mỹ vào đầu thế kỷ 20 và được đưa vào Từ điển
-                    tiếng Anh năm 1944.</small
-                  >
-                </div>
-              </div>
-            </a>
-
-            <a href="Detail4.html" class="text-decoration-none text-dark">
-              <div class="d-flex mb-3">
-                <img
-                  src="images/tap-the-duc-luc.jpg"
-                  alt="Tập thể dục là một hoạt động rất có lợi cho sức khỏe"
-                  class="blog-aside-img me-2"
-                />
-
-                <div>
-                  <h6 class="mb-1">
-                    Tập thể dục là một hoạt động rất có lợi cho sức khỏe
-                  </h6>
-                  <small class="text-muted mb-1"
-                    >Chính đồng hồ sinh học của cơ thể sẽ quyết định bạn là “cú
-                    đêm” hay ưa dậy sớm. Những nhịp sinh học này tác động đến
-                    các chức năng của cơ thể như chỉ số huyết áp, nhiệt độ cơ
-                    thể, mức độ hormone hay nhịp tim, tất cả đều đóng vai trò
-                    quan trọng trong việc xác định cơ thể bạn có sẵn sàng tập
-                    thể dục hay không.</small
-                  >
-                </div>
-              </div>
-            </a>
+        <!-- EVENT 3 -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img
+              src="images/tap-pilates1.jpg"
+              class="card-img-top event-img"
+              alt="Pilates & Thiền"
+            />
+            <div class="card-body">
+              <span class="event-date">
+                <i class="fa-solid fa-clock"></i> 18/03/2026
+              </span>
+              <h5 class="card-title mt-2">Pilates & Thiền Trị Liệu</h5>
+              <p class="card-text">
+                Kết hợp Pilates và thiền giúp cân bằng tinh thần, giảm stress và
+                cải thiện giấc ngủ.
+              </p>
+            </div>
+            <div class="card-footer bg-white border-0">
+              <a href="Detail3.html" class="btn btn-outline-danger w-100">
+                <i class="fa-solid fa-circle-info"></i> Xem chi tiết
+              </a>
+            </div>
           </div>
         </div>
       </div>
