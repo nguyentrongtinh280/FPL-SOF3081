@@ -1,0 +1,21 @@
+import { createRouter, createWebHistory } from "vue-router";
+import Home from "../views/Home2.vue";
+import Posts from "../views/Posts.vue";
+
+const routes = [
+  {
+    path: "/",
+    component: Home,
+  },
+  {
+    path: "/posts",
+    component: Posts,
+  },
+];
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes,
+});
+
+export default router;
