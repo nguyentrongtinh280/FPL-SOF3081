@@ -1,6 +1,5 @@
 <template>
   <div class="container mt-4">
-    <h2 class="text-center text-success mb-4">Ứng dụng blog nhỏ với vuejs</h2>
     <CreatePost @add-post="addPost" />
     <PostList :posts="posts" />
   </div>

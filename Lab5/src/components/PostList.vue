@@ -12,12 +12,12 @@
           class="card shadow-sm"
           :class="{ 'border-danger': post.title.length > 20 }"
         >
-          <div class="card-body">
-            <h5 class="card-title">
+          <div class="card-body text-start">
+            <h5 class="card-title text-success">
               {{ post.title }}
             </h5>
 
-            <h6 class="card-subtitle mb-2 text-muted">
+            <h6 class="card-subtitle mb-2 text-danger">
               Tác giả: {{ post.author }}
             </h6>
 
