@@ -1,5 +1,5 @@
 <template>
-  <div class="card shadow-sm mb-4">
+  <div class="card shadow-sm mb-4 post-form">
     <div class="card-body">
       <h2 class="card-title text-primary mb-3">Tạo bài viết mới</h2>
       <div class="mb-3">
@@ -60,3 +60,10 @@ function submitPost() {
   }
 }
 </script>
+
+<style>
+.post-form {
+  height: 420px;
+  overflow: hidden;
+}
+</style>
