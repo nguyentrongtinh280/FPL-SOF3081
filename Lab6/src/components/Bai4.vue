@@ -50,7 +50,7 @@
               required
             />
           </div>
-
+          <br />
           <div class="row">
             <div class="col-sm-6 d-grid">
               <button
@@ -107,7 +107,7 @@
                 </button>
                 <button
                   class="btn btn-danger text-white"
-                  @click="deleteStudent(index)"
+                  @click="confirmDelete(index)"
                 >
                   <i class="bi bi-trash me-1"></i> Xóa
                 </button>
@@ -158,6 +158,13 @@ function editStudent(index) {
   student.value = { ...students.value[index] };
   isEditing.value = true;
   editingIndex.value = index;
+}
+
+function confirmDelete(index) {
+  const isConfirm = confirm("Bạn có chắc muốn xóa sinh viên này?");
+  if (isConfirm) {
+    deleteStudent(index);
+  }
 }
 
 function deleteStudent(index) {
