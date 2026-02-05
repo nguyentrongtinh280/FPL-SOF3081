@@ -2,8 +2,9 @@
 import Bai1 from "./components/Bai1.vue";
 import Bai2 from "./components/Bai2.vue";
 import Bai4 from "./components/Bai4.vue";
+import Bai3 from "./components/Bai3.vue";
 </script>
 
 <template>
-  <Bai4 />
+  <Bai3 />
 </template>
