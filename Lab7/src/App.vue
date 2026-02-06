@@ -1,23 +1,20 @@
 <template>
   <div>
-    <Login v-if="!isLoggedIn" @LoggedIn="handleLoginSuccess" />
-    <Comment v-else :username="loggedInUser" />
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <span class="navbar-brand fw-bold">LAB7</span>
+
+        <div class="navbar-nav">
+          <router-link class="nav-link" to="/bai1">Bài 1</router-link>
+          <router-link class="nav-link" to="/bai2">Bài 2</router-link>
+          <router-link class="nav-link" to="/bai3">Bài 3</router-link>
+          <router-link class="nav-link" to="/bai4">Bài 4</router-link>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5 pt-4">
+      <router-view />
+    </div>
   </div>
 </template>
-
-<script setup>
-import Bai1 from "./components/Bai1.vue";
-import Bai2 from "./components/Bai2.vue";
-import Bai3 from "./components/Bai3.vue";
-
-// bài 4
-import { ref } from "vue";
-import Login from "./components/Login.vue";
-import Comment from "./components/Comment.vue";
-const isLoggedIn = ref(false);
-const loggedInUser = ref("");
-function handleLoginSuccess(username) {
-  loggedInUser.value = username;
-  isLoggedIn.value = true;
-}
-</script>

@@ -112,7 +112,7 @@
     </div>
     <br /><br />
 
-    <div class="card shadow-sm">
+    <div class="card shadow-sm" v-if="registerUser">
       <div class="card-body text-start">
         <h3 class="fw-bold text-primary">THÔNG TIN ĐÃ ĐĂNG KÝ</h3>
         <p><strong>Họ và tên:</strong> {{ registerUser.name }}</p>
