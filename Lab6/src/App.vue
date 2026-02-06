@@ -8,5 +8,5 @@ import demo from "./components/demoSlide.vue";
 </script>
 
 <template>
-  <demo />
+  <Bai4 />
 </template>
