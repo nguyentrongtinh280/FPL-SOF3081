@@ -1,11 +1,8 @@
 <template>
-  <nav class="navbar navbar-expand-sm navbar-light navbar-custom fixed-top">
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top shadow-sm">
     <div class="container">
       <router-link class="navbar-brand" to="/">
-        <img
-          src="../assets/images/DotBlog_domain_logo.png"
-          style="width: 130px"
-        />
+        <img src="../assets/images/logo_dotBlog2.png" class="me-2 logo-img" />
       </router-link>
 
       <button
@@ -88,7 +85,21 @@
 </template>
 
 <style scoped>
-.navbar-custom {
-  background: linear-gradient(90deg, #ffffff, #b2b2ec);
+.nav-link {
+  color: #ffffff !important;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: #ffc107 !important;
+}
+
+.navbar-brand {
+  color: #ffffff !important;
+}
+.logo-img {
+  height: 80px;
+  width: auto;
 }
 </style>
