@@ -54,10 +54,17 @@
             </a>
             <a
               href="https://www.instagram.com/"
-              class="social-icon"
+              class="social-icon me-3"
               target="_blank"
             >
               <i class="fa-brands fa-instagram fa-lg"></i>
+            </a>
+            <a
+              href="https://www.youtube.com/"
+              class="social-icon"
+              target="_blank"
+            >
+              <i class="fa-brands fa-youtube fa-lg"></i>
             </a>
           </div>
         </div>

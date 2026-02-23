@@ -6,7 +6,6 @@
           <h3 class="text-center fw-bold mb-4 text-primary">Đăng nhập</h3>
 
           <form @submit.prevent="handleSubmit" novalidate>
-            <!-- Username -->
             <div class="mb-3 position-relative">
               <i class="fa fa-user input-icon"></i>
               <input
@@ -19,7 +18,6 @@
               <div class="invalid-feedback">Vui lòng nhập tên đăng nhập!</div>
             </div>
 
-            <!-- Password -->
             <div class="mb-3 position-relative">
               <i class="fa fa-lock input-icon"></i>
               <input
@@ -32,7 +30,6 @@
               <div class="invalid-feedback">Vui lòng nhập mật khẩu!</div>
             </div>
 
-            <!-- Remember + forgot -->
             <div class="d-flex justify-content-between align-items-center mb-3">
               <div class="form-check">
                 <input
@@ -49,12 +46,10 @@
               <router-link to="/forgot-password"> Quên mật khẩu? </router-link>
             </div>
 
-            <!-- Button -->
             <div class="d-grid mb-3">
               <button class="btn btn-success text-white">Đăng nhập</button>
             </div>
 
-            <!-- Register -->
             <div class="text-center">
               <span>Chưa có tài khoản?</span>
               <router-link
@@ -98,7 +93,7 @@ const handleSubmit = () => {
 <style scoped>
 .login-wrapper {
   min-height: 100vh;
-  background: linear-gradient(135deg, #6f86d6, #9f5bd1);
+  background: white;
   display: flex;
   align-items: center;
   justify-content: center;

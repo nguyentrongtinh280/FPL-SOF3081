@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top shadow-sm">
     <div class="container">
       <router-link class="navbar-brand" to="/">
-        <img src="../assets/images/logo_dotBlog2.png" class="me-2 logo-img" />
+        <img src="../assets/images/logo-blog.png" class="me-2 logo-img" />
       </router-link>
 
       <button
@@ -35,7 +35,7 @@
           </li>
 
           <li class="nav-item">
-            <router-link class="nav-link" to="/create-post">
+            <router-link class="nav-link" to="/post-create">
               <i class="fa-solid fa-pen-to-square"></i> Đăng bài
             </router-link>
           </li>
@@ -63,6 +63,11 @@
               <li>
                 <router-link class="dropdown-item" to="/forgotPassword">
                   <i class="fa-solid fa-unlock"></i> Quên mật khẩu
+                </router-link>
+              </li>
+              <li>
+                <router-link class="dropdown-item" to="/profile">
+                  <i class="fa-solid fa-address-book"></i> Thông tin cá nhân
                 </router-link>
               </li>
             </ul>

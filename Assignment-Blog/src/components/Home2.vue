@@ -1,91 +1,5 @@
-<script setup>
-import banner1 from "../assets/images/banner1.jpg";
-import banner2 from "../assets/images/banner2.jpg";
-import banner3 from "../assets/images/banner3.jpg";
-import avatar from "../assets/images/avatar.png";
-import tapPilates from "../assets/images/tap-piltes.jpg";
-import tapPilates1 from "../assets/images/tap-pilates1.jpg";
-import orange from "../assets/images/orange_300x300.jpg";
-import timMach from "../assets/images/tim-mach.jpg";
-import video1 from "../assets/images/video1.jpg";
-import video2 from "../assets/images/video2.jpg";
-import video3 from "../assets/images/video3.jpg";
-
-const categories = [
-  { name: "Chế độ học tập", count: 12, active: true },
-  { name: "Chế độ dinh dưỡng", count: 25 },
-  { name: "Chế độ ăn uống", count: 41 },
-  { name: "Chế độ ngủ nghỉ", count: 15, active: true },
-  { name: "Món ăn độc hại", count: 56, active: true },
-  { name: "Phòng tránh béo phì", count: 58, active: true },
-];
-
-const popularRead = [
-  "Bí quyết sống tích cực mỗi ngày",
-  "Bí quyết sống vui mỗi ngày",
-  "Bí quyết sống hạnh phúc mỗi ngày",
-  "Các món ăn tốt cho sức khỏe",
-  "Thực phẩm dinh dưỡng",
-];
-
-const popularView = [
-  "Tập thể dục mỗi ngày",
-  "Tập Yoga nâng cao sức khỏe",
-  "Chạy độ tốt cho sức khỏe",
-  "Món ăn tốt cho sức khỏe",
-];
-
-const asideBlogs = [
-  { title: "Biết ơn đời, đời sẽ thương ta", img: orange, cmt: 30 },
-  { title: "9 tác dụng tuyệt vời của quả cam", img: tapPilates1, cmt: 28 },
-  { title: "10 công dụng bất ngờ từ dầu dừa", img: timMach, cmt: 15 },
-  { title: "Lợi ích khi ăn rau mỗi ngày", img: orange, cmt: 12 },
-];
-
-//const videos = [video1, video2, video3, video2, video1, video2, video3, video2];
-
-const videos = [
-  {
-    title: "Tầm quan trọng của content",
-    content:
-      "Content không chỉ là cách để doanh nghiệp giao tiếp với khách hàng mà còn là cách để tạo dựng lòng tin, xây dựng thương hiệu và thuyết phục khách hàng hành động",
-    img: video1,
-  },
-  {
-    title: "1. Định nghĩa content một cách toàn diện",
-    content:
-      "Content (nội dung) là bất cứ thông điệp nào được tạo ra để giao tiếp và tương tác với người dùng.",
-    img: video2,
-  },
-  {
-    title: "Content Creator: (người sáng tạo nội dung)",
-    content:
-      "à người chịu trách nhiệm tạo ra các loại nội dung khác nhau, không chỉ giới hạn ở văn bản.",
-    img: video3,
-  },
-  {
-    title: "Nhiệm vụ chính của Content Creator:",
-    content:
-      "Sáng tạo nội dung cho các nền tảng kỹ thuật số như YouTube, Instagram, TikTok, và blog.",
-    img: video3,
-  },
-  {
-    title: "Copywriter: là người chuyên viết nội dung quảng cáo",
-    content:
-      "Họ thường viết các đoạn văn ngắn, súc tích và có tính thuyết phục cao, nhằm tạo ra nội dung quảng cáo, slogan, tiêu đề hấp dẫn, hoặc các bản sao bán hàng.",
-    img: video2,
-  },
-  {
-    title: "Các thuật ngữ cơ bản về content",
-    content:
-      "Content Marketing là chiến lược sử dụng content để tiếp cận, thu hút và giữ chân khách hàng.",
-    img: video3,
-  },
-];
-</script>
-
 <template>
-  <div class="container mt-3">
+  <div class="container mt-4 pt-5">
     <div id="carouseExampleDark" class="carousel slide carousel-dark">
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -249,7 +163,7 @@ const videos = [
 
           <div class="mt-4">
             <h3 class="text-primary fw-bold text-center mb-4">
-              Video - Đừng bỏ lỡ
+              Bài viết mới nhất
             </h3>
             <div class="row g-3">
               <div
@@ -276,6 +190,66 @@ const videos = [
     </div>
   </div>
 </template>
+
+<script setup>
+import banner1 from "../assets/images/banner1.jpg";
+import banner2 from "../assets/images/banner2.jpg";
+import banner3 from "../assets/images/banner3.jpg";
+import avatar from "../assets/images/avatar.png";
+import tapPilates from "../assets/images/tap-piltes.jpg";
+import tapPilates1 from "../assets/images/tap-pilates1.jpg";
+import orange from "../assets/images/orange_300x300.jpg";
+import timMach from "../assets/images/tim-mach.jpg";
+import video1 from "../assets/images/video1.jpg";
+import video2 from "../assets/images/video2.jpg";
+import video3 from "../assets/images/video3.jpg";
+
+const categories = [
+  { name: "Chế độ học tập", count: 12, active: true },
+  { name: "Chế độ dinh dưỡng", count: 25 },
+  { name: "Chế độ ngủ nghỉ", count: 15, active: true },
+];
+
+const popularRead = ["Bí quyết sống tích cực mỗi ngày", "Thực phẩm dinh dưỡng"];
+
+const popularView = ["Tập thể dục mỗi ngày", "Món ăn tốt cho sức khỏe"];
+
+const asideBlogs = [
+  { title: "Biết ơn đời, đời sẽ thương ta", img: orange, cmt: 30 },
+  { title: "9 tác dụng tuyệt vời của quả cam", img: tapPilates1, cmt: 28 },
+  { title: "10 công dụng bất ngờ từ dầu dừa", img: timMach, cmt: 15 },
+  { title: "Lợi ích khi ăn rau mỗi ngày", img: orange, cmt: 12 },
+];
+
+//const videos = [video1, video2, video3, video2, video1, video2, video3, video2];
+
+const videos = [
+  {
+    title: "Tầm quan trọng của content",
+    content:
+      "Content không chỉ là cách để doanh nghiệp giao tiếp với khách hàng mà còn là cách để tạo dựng lòng tin, xây dựng thương hiệu và thuyết phục khách hàng hành động",
+    img: video1,
+  },
+  {
+    title: "1. Định nghĩa content một cách toàn diện",
+    content:
+      "Content (nội dung) là bất cứ thông điệp nào được tạo ra để giao tiếp và tương tác với người dùng.",
+    img: video2,
+  },
+  {
+    title: "Content Creator: (người sáng tạo nội dung)",
+    content:
+      "à người chịu trách nhiệm tạo ra các loại nội dung khác nhau, không chỉ giới hạn ở văn bản.",
+    img: video3,
+  },
+  {
+    title: "Nhiệm vụ chính của Content Creator:",
+    content:
+      "Sáng tạo nội dung cho các nền tảng kỹ thuật số như YouTube, Instagram, TikTok, và blog.",
+    img: video3,
+  },
+];
+</script>
 
 <style scoped>
 .blog-aside-img {
