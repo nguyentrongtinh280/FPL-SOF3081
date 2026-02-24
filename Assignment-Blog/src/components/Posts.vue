@@ -74,7 +74,7 @@
       <main class="col-sm-8">
         <h3 class="text-primary mb-3 fw-bold">Bài viết nổi bật</h3>
         <div class="row g-3">
-          <div class="col-md-6" v-for="(post, index) in posts" :key="index">
+          <div class="col-md-6" v-for="(post, index) in allPosts" :key="index">
             <router-link
               :to="'/detail/${index + 1}'"
               class="text-decoration-none text-dark"
@@ -111,6 +111,8 @@ import spinach from "../assets/images/spinach_300x300.jpg";
 import corevalue from "../assets/images/corevalue.jpg";
 import orange from "../assets/images/orange_300x300.jpg";
 
+import { posts2 } from "../data/postData";
+
 const categories = [
   { name: "Chế độ học tập", count: 12, active: true },
   { name: "Chế độ dinh dưỡng", count: 25 },
@@ -132,19 +134,6 @@ const posts = [
     content:
       "Chính đồng hồ sinh học của cơ thể sẽ quyết định bạn là “cú đêm” hay ưa dậy sớm. Những nhịp sinh học nàytác động đến các chức năng của cơ thể như chỉ số uyết áp, nhiệt độ cơ thể, mức độ hormone hay nhịptim, tất cả đều đóng vai trò quan trọng trong việcxác định cơ thể bạn có sẵn sàng tập thể dục haykhông.",
     img: tapTheDuc,
-  },
-  {
-    title: "Tim mạch là nhóm bệnh lý liên quan đến tim và mạch máu",
-    content:
-      "Tim mạch là nhóm bệnh lý liên quan đến tim và mạch máu, bao gồm các bệnh như cao huyết áp, bệnh mạch vành, đột quỵ, suy tim, thấp tim, v.v., đang là nguyên nhân gây tử vong hàng đầu thế giới, có xu hướng trẻ hóa do lối sống không lành mạnh (hút thuốc, ít vận động, ăn uống kém), nhưng có thể phòng ngừa và kiểm soát bằng thay đổi lối sống, thăm khám định kỳ.",
-    img: timMach,
-  },
-  {
-    title:
-      "Quản trị Marketing (Marketing Management) là quá trình phân tích, lập kế hoạch",
-    content:
-      "Quản trị Marketing (Marketing Management) là quá trình phân tích, lập kế hoạch, thực hiện và kiểm soát các hoạt động tiếp thị nhằm xây dựng, củng cố và duy trì những trao đổi có lợi với khách hàng mục tiêu, qua đó đạt được mục tiêu kinh doanh của doanh nghiệp, bao gồm việc hiểu thị trường, phát triển",
-    img: marketing,
   },
 ];
 
@@ -170,6 +159,8 @@ const featurePosts = [
     content: "Nhiệm vụ chính của Content Creator",
   },
 ];
+
+const allPosts = [...posts, ...posts2];
 </script>
 
 <style scoped>

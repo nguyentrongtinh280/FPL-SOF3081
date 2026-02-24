@@ -3,7 +3,7 @@
     <div class="row justify-content-center">
       <div class="col-md-12 mt-4 pt-5">
         <div class="card shadow-sm">
-          <div class="card-header bg-warning text-white fw-bold">
+          <div class="card-header bg-light fw-bold">
             <h5 class="mb-0">
               <i class="fa-solid fa-pen-to-square"></i> Đăng bài viết mới
             </h5>
@@ -131,8 +131,8 @@
 
 <script setup>
 import { ref, computed, reactive } from "vue";
+import { posts2 } from "../data/postData";
 
-const posts = ref([]);
 const editingIndex = ref(null);
 const form = reactive({
   title: "",
@@ -141,8 +141,8 @@ const form = reactive({
 });
 const keyword = ref("");
 const filterPosts = computed(() => {
-  if (!keyword.value) return posts.value;
-  return posts.value.filter((post) =>
+  if (!keyword.value) return posts2;
+  return posts2.filter((post) =>
     post.title.toLowerCase().includes(keyword.value.toLowerCase()),
   );
 });
@@ -161,16 +161,26 @@ function submitPost() {
     return;
   }
   if (isEditing.value) {
-    posts.value[editingIndex.value] = {
+    // posts.value[editingIndex.value] = {
+    //   title: form.title,
+    //   content: form.content,
+    //   image: form.imagePreview,
+    // };
+    posts2[editingIndex.value] = {
       title: form.title,
       content: form.content,
-      image: form.imagePreview,
+      img: form.imagePreview,
     };
   } else {
-    posts.value.push({
+    // posts.value.push({
+    //   title: form.title,
+    //   content: form.content,
+    //   image: form.imagePreview,
+    // });
+    posts2.push({
       title: form.title,
       content: form.content,
-      image: form.imagePreview,
+      img: form.imagePreview,
     });
   }
   resetForm();
@@ -178,18 +188,18 @@ function submitPost() {
 
 function updatePost(index) {
   const realPost = filterPosts.value[index];
-  const realIndex = posts.value.indexOf(realPost);
+  const realIndex = posts2.indexOf(realPost);
   form.title = realPost.title;
   form.content = realPost.content;
-  form.imagePreview = realPost.image;
+  form.imagePreview = realPost.img;
   editingIndex.value = realIndex;
 }
 
 function deletePost(index) {
   if (confirm("Bạn có chắc muốn xóa bài viết này")) {
     const realPost = filterPosts.value[index];
-    const realIndex = posts.value.indexOf(realPost);
-    posts.value.splice(realIndex, 1);
+    const realIndex = posts2.indexOf(realPost);
+    posts2.splice(realIndex, 1);
   }
 }
 

@@ -168,7 +168,7 @@
             <div class="row g-3">
               <div
                 class="col-md-6"
-                v-for="(video, index) in videos"
+                v-for="(video, index) in allPosts"
                 :key="index"
               >
                 <div class="card h-100">
@@ -204,6 +204,8 @@ import video1 from "../assets/images/video1.jpg";
 import video2 from "../assets/images/video2.jpg";
 import video3 from "../assets/images/video3.jpg";
 
+import { posts2 } from "../data/postData";
+
 const categories = [
   { name: "Chế độ học tập", count: 12, active: true },
   { name: "Chế độ dinh dưỡng", count: 25 },
@@ -236,19 +238,9 @@ const videos = [
       "Content (nội dung) là bất cứ thông điệp nào được tạo ra để giao tiếp và tương tác với người dùng.",
     img: video2,
   },
-  {
-    title: "Content Creator: (người sáng tạo nội dung)",
-    content:
-      "à người chịu trách nhiệm tạo ra các loại nội dung khác nhau, không chỉ giới hạn ở văn bản.",
-    img: video3,
-  },
-  {
-    title: "Nhiệm vụ chính của Content Creator:",
-    content:
-      "Sáng tạo nội dung cho các nền tảng kỹ thuật số như YouTube, Instagram, TikTok, và blog.",
-    img: video3,
-  },
 ];
+
+const allPosts = [...videos, ...posts2];
 </script>
 
 <style scoped>

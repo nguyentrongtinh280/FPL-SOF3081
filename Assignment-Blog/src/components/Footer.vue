@@ -27,7 +27,7 @@
               >
             </li>
             <li>
-              <router-link class="footer-link" to="/create-post"
+              <router-link class="footer-link" to="/post-create"
                 >Đăng bài</router-link
               >
             </li>
