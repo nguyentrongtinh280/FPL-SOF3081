@@ -168,16 +168,21 @@
             <div class="row g-3">
               <div
                 class="col-md-6"
-                v-for="(video, index) in allPosts"
+                v-for="(post, index) in allPosts"
                 :key="index"
               >
-                <div class="card h-100">
-                  <img :src="video.img" class="card-img-top" />
-                  <div class="card-body">
-                    <h6>{{ video.title }}</h6>
-                    <p class="small text-muted">{{ video.content }}</p>
+                <router-link
+                  :to="`/post-detail/${post.id}`"
+                  class="text-decoration-none text-dark"
+                >
+                  <div class="card h-100">
+                    <img :src="post.img" class="card-img-top" />
+                    <div class="card-body">
+                      <h6>{{ post.title }}</h6>
+                      <p class="small text-muted">{{ post.content }}</p>
+                    </div>
                   </div>
-                </div>
+                </router-link>
               </div>
             </div>
 
@@ -203,7 +208,7 @@ import timMach from "../assets/images/tim-mach.jpg";
 import video1 from "../assets/images/video1.jpg";
 import video2 from "../assets/images/video2.jpg";
 import video3 from "../assets/images/video3.jpg";
-
+import tapTheDuc from "../assets/images/tap-the-duc2.jpg";
 import { posts2 } from "../data/postData";
 
 const categories = [
@@ -225,22 +230,24 @@ const asideBlogs = [
 
 //const videos = [video1, video2, video3, video2, video1, video2, video3, video2];
 
-const videos = [
+const posts = [
   {
-    title: "Tầm quan trọng của content",
+    id: 1,
+    title: "Phương pháp tập Pilates giúp phục hồi chấn thương cột sống",
     content:
-      "Content không chỉ là cách để doanh nghiệp giao tiếp với khách hàng mà còn là cách để tạo dựng lòng tin, xây dựng thương hiệu và thuyết phục khách hàng hành động",
-    img: video1,
+      "Pilates ban đầu được gọi là “Contrology” - một phương pháp tập thể dục toàn thân giúp người tập cải thiện các hoạt động hàng ngày. Pilates ngoài việc nhấn mạnh vào sức mạnh cốt lõi còn tập trung phát triển những mô hình chuyển động chức năng và bền vững xuyên suốt cơ thể.",
+    img: tapPilates,
   },
   {
-    title: "1. Định nghĩa content một cách toàn diện",
+    id: 2,
+    title: "Tập thể dục là một hoạt động rất có lợi cho sức khỏe.",
     content:
-      "Content (nội dung) là bất cứ thông điệp nào được tạo ra để giao tiếp và tương tác với người dùng.",
-    img: video2,
+      "Chính đồng hồ sinh học của cơ thể sẽ quyết định bạn là “cú đêm” hay ưa dậy sớm. Những nhịp sinh học nàytác động đến các chức năng của cơ thể như chỉ số uyết áp, nhiệt độ cơ thể, mức độ hormone hay nhịptim, tất cả đều đóng vai trò quan trọng trong việcxác định cơ thể bạn có sẵn sàng tập thể dục haykhông.",
+    img: tapTheDuc,
   },
 ];
 
-const allPosts = [...videos, ...posts2];
+const allPosts = [...posts, ...posts2];
 </script>
 
 <style scoped>

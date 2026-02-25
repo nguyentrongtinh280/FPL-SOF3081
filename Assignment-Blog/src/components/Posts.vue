@@ -76,7 +76,7 @@
         <div class="row g-3">
           <div class="col-md-6" v-for="(post, index) in allPosts" :key="index">
             <router-link
-              :to="'/detail/${index + 1}'"
+              :to="`/post-detail/${post.id}`"
               class="text-decoration-none text-dark"
             >
               <div class="card h-100">
@@ -124,12 +124,14 @@ const categories = [
 
 const posts = [
   {
+    id: 1,
     title: "Phương pháp tập Pilates giúp phục hồi chấn thương cột sống",
     content:
       "Pilates ban đầu được gọi là “Contrology” - một phương pháp tập thể dục toàn thân giúp người tập cải thiện các hoạt động hàng ngày. Pilates ngoài việc nhấn mạnh vào sức mạnh cốt lõi còn tập trung phát triển những mô hình chuyển động chức năng và bền vững xuyên suốt cơ thể.",
     img: pilates,
   },
   {
+    id: 2,
     title: "Tập thể dục là một hoạt động rất có lợi cho sức khỏe.",
     content:
       "Chính đồng hồ sinh học của cơ thể sẽ quyết định bạn là “cú đêm” hay ưa dậy sớm. Những nhịp sinh học nàytác động đến các chức năng của cơ thể như chỉ số uyết áp, nhiệt độ cơ thể, mức độ hormone hay nhịptim, tất cả đều đóng vai trò quan trọng trong việcxác định cơ thể bạn có sẵn sàng tập thể dục haykhông.",

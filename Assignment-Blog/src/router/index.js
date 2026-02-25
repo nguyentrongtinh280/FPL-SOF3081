@@ -4,6 +4,7 @@ import Posts from "../components/Posts.vue";
 import Login from "../components/Login.vue";
 import postCreate from "../components/PostCreate.vue";
 import Register from "../components/Register.vue";
+import PostDetail from "../components/PostDetail.vue";
 
 const routes = [
   {
@@ -30,6 +31,11 @@ const routes = [
     path: "/register",
     component: Register,
     meta: { layout: "auth" },
+  },
+  {
+    path: "/post-detail/:id",
+    component: PostDetail,
+    meta: { layout: "default" },
   },
 ];
 

@@ -178,6 +178,7 @@ function submitPost() {
     //   image: form.imagePreview,
     // });
     posts2.push({
+      id: Date.now(),
       title: form.title,
       content: form.content,
       img: form.imagePreview,
