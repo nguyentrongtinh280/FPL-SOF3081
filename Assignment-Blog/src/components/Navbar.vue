@@ -56,6 +56,11 @@
                 </router-link>
               </li>
               <li>
+                <button class="dropdown-item" @click="logout">
+                  <i class="fa-solid fa-left-long"></i> Đăng xuất
+                </button>
+              </li>
+              <li>
                 <router-link class="dropdown-item" to="/register">
                   <i class="fa-solid fa-user-plus"></i> Đăng ký
                 </router-link>
@@ -108,3 +113,12 @@
   width: auto;
 }
 </style>
+
+<script setup>
+import router from "../router";
+
+function logout() {
+  localStorage.removeItem("isLoggedIn");
+  router.push("/");
+}
+</script>

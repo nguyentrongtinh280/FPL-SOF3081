@@ -3,6 +3,7 @@ import Home from "../components/Home2.vue";
 import Posts from "../components/Posts.vue";
 import Login from "../components/Login.vue";
 import postCreate from "../components/PostCreate.vue";
+import Register from "../components/Register.vue";
 
 const routes = [
   {
@@ -18,11 +19,16 @@ const routes = [
   {
     path: "/post-create",
     component: postCreate,
-    meta: { layout: "default" },
+    meta: { layout: "default", requiresAuth: true },
   },
   {
     path: "/login",
     component: Login,
+    meta: { layout: "auth" },
+  },
+  {
+    path: "/register",
+    component: Register,
     meta: { layout: "auth" },
   },
 ];
@@ -30,6 +36,18 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(),
   routes,
+});
+
+router.beforeEach((to, from, next) => {
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+  if (to.meta.requiresAuth && !isLoggedIn) {
+    next("/login");
+  } else if (to.path === "/login" && isLoggedIn) {
+    next("/post-create");
+  } else {
+    next();
+  }
 });
 
 export default router;

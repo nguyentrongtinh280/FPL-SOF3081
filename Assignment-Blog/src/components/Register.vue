@@ -3,7 +3,7 @@
     <div class="card login-card shadow-lg">
       <div class="row g-0">
         <div class="col-md-12 login-right">
-          <h3 class="text-center fw-bold mb-4 text-primary">Đăng nhập</h3>
+          <h3 class="text-center fw-bold mb-4 text-primary">Đăng ký</h3>
           <form @submit.prevent="handleSubmit" novalidate>
             <div class="mb-3 position-relative">
               <i class="fa fa-user input-icon"></i>
@@ -29,20 +29,33 @@
               <div class="invalid-feedback">Vui lòng nhập mật khẩu!</div>
             </div>
 
+            <div class="mb-3 position-relative">
+              <i class="fa fa-lock input-icon"></i>
+              <input
+                type="password"
+                class="form-control"
+                v-model="confirmPassword"
+                placeholder="Xác nhận mật khẩu"
+                :class="{ 'is-invalid': submitted && !confirmPassword }"
+              />
+              <div class="invalid-feedback">
+                Vui lòng nhập xác nhận mật khẩu!
+              </div>
+            </div>
+
             <div class="d-grid mb-3">
-              <button class="btn btn-success text-white">Đăng nhập</button>
+              <button class="btn btn-success text-white">Đăng ký</button>
             </div>
 
             <div class="text-center">
-              <span>Chưa có tài khoản?</span>
+              <span>Đã có tài khoản?</span>
               <router-link
-                to="/register"
+                to="/login"
                 class="fw-bold text-decoration-none ms-1"
               >
-                Đăng ký
+                Đăng nhập
               </router-link>
             </div>
-
             <div v-if="errorMessage" class="text-danger text-center">
               {{ errorMessage }}
             </div>
@@ -60,36 +73,37 @@ import { useRouter } from "vue-router";
 const router = useRouter();
 const username = ref("");
 const password = ref("");
+const confirmPassword = ref("");
 const submitted = ref(false);
 const errorMessage = ref("");
 
-const handleSubmit = () => {
+function handleSubmit() {
   submitted.value = true;
   errorMessage.value = "";
+  if (!username.value || !password.value || !confirmPassword.value) {
+    return;
+  }
 
-  if (!username.value || !password.value) {
+  if (password.value !== confirmPassword.value) {
+    errorMessage.value = "Xác nhận mật khẩu không khớp!";
     return;
   }
 
   const users = JSON.parse(localStorage.getItem("users")) || [];
-  const foundUser = users.find(
-    (u) => u.username === username.value && u.password === password.value,
-  );
-
-  const validUser = "tinh1";
-  const validPassword = "123";
-
-  if (
-    (username.value === validUser && password.value === validPassword) ||
-    foundUser
-  ) {
-    localStorage.setItem("isLoggedIn", "true");
-    localStorage.setItem("username", username.value);
-    router.push("/");
-  } else {
-    errorMessage.value = "Sai tên đăng nhập hoặc mật khẩu!";
+  const userExists = users.find((u) => u.username === username.value);
+  if (userExists) {
+    errorMessage.value = "Tên đăng nhập đã tồn tại!";
+    return;
   }
-};
+  users.push({
+    username: username.value,
+    password: password.value,
+  });
+
+  localStorage.setItem("users", JSON.stringify(users));
+  alert("Đăng ký thành công!");
+  router.push("/login");
+}
 </script>
 
 <style scoped>
@@ -106,7 +120,7 @@ const handleSubmit = () => {
   width: 500px;
   border-radius: 15px;
   overflow: hidden;
-  height: 345px;
+  height: 405px;
 }
 
 .login-right {
