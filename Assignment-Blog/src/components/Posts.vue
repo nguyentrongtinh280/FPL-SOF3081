@@ -130,7 +130,7 @@ const posts = [
     title: "Phương pháp tập Pilates giúp phục hồi chấn thương cột sống",
     content:
       "Pilates ban đầu được gọi là “Contrology” - một phương pháp tập thể dục toàn thân giúp người tập cải thiện các hoạt động hàng ngày. Pilates ngoài việc nhấn mạnh vào sức mạnh cốt lõi còn tập trung phát triển những mô hình chuyển động chức năng và bền vững xuyên suốt cơ thể.",
-    img: pilates,
+    img: timMach,
   },
   {
     id: 2,

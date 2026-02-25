@@ -15,6 +15,34 @@
         <p>{{ post.content }}</p>
       </div>
     </div>
+
+    <div class="card mt-4">
+      <div class="card-header fw-bold">Bình luận</div>
+      <div class="card-body">
+        <div class="mb-3">
+          <textarea
+            v-model="newComment"
+            class="form-control"
+            rows="3"
+            placeholder="Nhập bình luận..."
+          ></textarea>
+          <button class="btn btn-success mt-2" @click="addComment">
+            Gửi bình luận
+          </button>
+        </div>
+        <div v-if="comments.length === 0" class="text-muted">
+          Chưa có bình luận nào!
+        </div>
+        <div
+          v-for="(comment, index) in comments"
+          :key="index"
+          class="border rounded p-2 mb-2"
+        >
+          <strong>{{ comment.username }}</strong>
+          <p class="mb-0 small">{{ comment.content }}</p>
+        </div>
+      </div>
+    </div>
   </div>
   <div v-else class="text-center mt-5">
     <h4>Bài viết không tồn tại!</h4>
@@ -22,8 +50,8 @@
 </template>
 
 <script setup>
-import { useRoute } from "vue-router";
-import { computed } from "vue";
+import { useRoute, useRouter } from "vue-router";
+import { computed, ref, watch } from "vue";
 import { posts2 } from "../data/postData";
 import pilates from "../assets/images/tap-piltes.jpg";
 import tapTheDuc from "../assets/images/tap-the-duc2.jpg";
@@ -51,4 +79,44 @@ const post = computed(() => {
   const id = Number(route.params.id);
   return allPosts.find((p) => p.id === id);
 });
+
+const router = useRouter();
+const newComment = ref("");
+const comments = ref([]);
+const postId = computed(() => Number(route.params.id));
+watch(
+  postId,
+  (id) => {
+    const saved = localStorage.getItem("comments_" + id);
+    comments.value = saved ? JSON.parse(saved) : [];
+  },
+  {
+    immediate: true,
+  },
+);
+
+function addComment() {
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
+  if (!isLoggedIn) {
+    alert("Vui lòng đăng nhập");
+    router.push("/login");
+    return;
+  }
+
+  if (!newComment.value.trim()) {
+    return;
+  }
+  const username = localStorage.getItem("username");
+  const commentData = {
+    username,
+    content: newComment.value,
+  };
+  comments.value.push(commentData);
+
+  localStorage.setItem(
+    "comments_" + postId.value,
+    JSON.stringify(comments.value),
+  );
+  newComment.value = "";
+}
 </script>

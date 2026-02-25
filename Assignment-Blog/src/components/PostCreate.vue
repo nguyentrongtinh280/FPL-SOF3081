@@ -10,7 +10,11 @@
           </div>
 
           <div class="card-body">
-            <form class="was-validated" @submit.prevent="submitPost">
+            <form
+              :class="{ 'was-validated': isSubmitted }"
+              @submit.prevent="submitPost"
+              novalidate
+            >
               <div class="mb-3">
                 <label class="form-label fw-bold">Tiêu đề bài viết</label>
                 <input
@@ -44,12 +48,15 @@
                   class="form-control"
                   accept="image/*"
                   @change="previewImage"
+                  ref="fileInput"
+                  required
                 />
                 <img
                   v-if="form.imagePreview"
                   :src="form.imagePreview"
                   class="preview-img mt-2"
                 />
+                <div class="invalid-feedback">Vui lòng chọn hình ảnh</div>
               </div>
 
               <div class="d-flex justify-content-between">
@@ -133,7 +140,9 @@
 import { ref, computed, reactive } from "vue";
 import { posts2 } from "../data/postData";
 
+const fileInput = ref(null);
 const editingIndex = ref(null);
+const isSubmitted = ref(false);
 const form = reactive({
   title: "",
   content: "",
@@ -156,8 +165,14 @@ function previewImage(event) {
   }
 }
 
-function submitPost() {
-  if (!form.title || !form.content) {
+function submitPost(e) {
+  isSubmitted.value = true;
+  // if (!form.title || !form.content) {
+  //   return;
+  // }
+
+  const formElement = e.target;
+  if (!formElement.checkValidity()) {
     return;
   }
   if (isEditing.value) {
@@ -185,6 +200,7 @@ function submitPost() {
     });
   }
   resetForm();
+  isSubmitted.value = false;
 }
 
 function updatePost(index) {
@@ -209,6 +225,9 @@ function resetForm() {
   form.content = "";
   form.imagePreview = null;
   editingIndex.value = null;
+  if (fileInput.value) {
+    fileInput.value.value = "";
+  }
 }
 </script>
 
