@@ -53,18 +53,20 @@
           <div class="box-body">
             <ul class="list-group list-group-flush">
               <li
-                v-for="post in featurePosts"
-                :key="post.title"
-                class="list-group-item d-flex align-items-start"
+                v-for="post in allPostsFeature"
+                :key="post.id"
+                class="list-group-item p-2"
               >
-                <img :src="post.img" class="feature-img me-3" />
+                <router-link
+                  :to="`/post-detail/${post.id}`"
+                  class="d-flex align-items-center text-decoration-none text-dark"
+                >
+                  <img :src="post.img" class="feature-img me-3" />
 
-                <div>
-                  <strong>{{ post.title }}</strong>
-                  <p class="small text-muted mb-0">
-                    {{ post.content }}
-                  </p>
-                </div>
+                  <h6 class="mb-0 fw-bold feature-title">
+                    {{ post.title }}
+                  </h6>
+                </router-link>
               </li>
             </ul>
           </div>
@@ -72,7 +74,7 @@
       </aside>
 
       <main class="col-sm-8">
-        <h3 class="text-primary mb-3 fw-bold">Bài viết nổi bật</h3>
+        <h3 class="text-primary mb-3 fw-bold">Bài viết hôm nay</h3>
         <div class="row g-3">
           <div class="col-md-6" v-for="(post, index) in allPosts" :key="index">
             <router-link
@@ -139,30 +141,8 @@ const posts = [
   },
 ];
 
-const featurePosts = [
-  {
-    title: "Biết ơn đời, đời sẽ thương ta",
-    img: orange,
-    content: "Nhiệm vụ chính của Content Creator",
-  },
-  {
-    title: "9 tác dụng tuyệt vời của quả cam",
-    img: spinach,
-    content: "Nhiệm vụ chính của Content Creator",
-  },
-  {
-    title: "10 công dụng bất ngờ từ dầu dừa",
-    img: timMach,
-    content: "Nhiệm vụ chính của Content Creator",
-  },
-  {
-    title: "Lợi ích khi ăn rau mỗi ngày",
-    img: corevalue,
-    content: "Nhiệm vụ chính của Content Creator",
-  },
-];
-
 const allPosts = [...posts, ...posts2];
+const allPostsFeature = [...posts, ...posts2];
 </script>
 
 <style scoped>
