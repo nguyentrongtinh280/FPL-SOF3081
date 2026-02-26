@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top shadow-sm">
     <div class="container">
       <router-link class="navbar-brand" to="/">
-        <img src="../assets/images/logo-blog.png" class="me-2 logo-img" />
+        <img src="../assets/images/logo-blog-final.png" class="me-2 logo-img" />
       </router-link>
 
       <button
@@ -108,7 +108,7 @@
 }
 .logo-img {
   height: 80px;
-  width: auto;
+  width: 140px;
 }
 </style>
 

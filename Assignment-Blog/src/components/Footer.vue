@@ -22,11 +22,6 @@
               >
             </li>
             <li>
-              <router-link class="footer-link" to="/events"
-                >Sự kiện</router-link
-              >
-            </li>
-            <li>
               <router-link class="footer-link" to="/post-create"
                 >Đăng bài</router-link
               >
@@ -70,7 +65,7 @@
         </div>
       </div>
       <hr class="border-secondary" />
-      <div class="text-center small">© 2026 DotBlog. All rights reserved.</div>
+      <div class="text-center small">Trường cao đẳng FPT Polytechnic</div>
     </div>
   </footer>
 </template>

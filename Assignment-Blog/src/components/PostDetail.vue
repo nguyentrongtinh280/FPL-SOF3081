@@ -33,11 +33,7 @@
         <div v-if="comments.length === 0" class="text-muted">
           Chưa có bình luận nào!
         </div>
-        <div
-          v-for="(comment, index) in comments"
-          :key="index"
-          class="border rounded p-2 mb-2"
-        >
+        <div v-for="(comment, index) in comments" :key="index" class="p-2 mb-2">
           <strong>{{ comment.username }}</strong>
           <p class="mb-0 small">{{ comment.content }}</p>
         </div>
@@ -84,6 +80,7 @@ const router = useRouter();
 const newComment = ref("");
 const comments = ref([]);
 const postId = computed(() => Number(route.params.id));
+
 watch(
   postId,
   (id) => {
@@ -106,9 +103,9 @@ function addComment() {
   if (!newComment.value.trim()) {
     return;
   }
-  const username = localStorage.getItem("username");
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
   const commentData = {
-    username,
+    username: currentUser.username,
     content: newComment.value,
   };
   comments.value.push(commentData);
