@@ -76,15 +76,9 @@ const handleSubmit = () => {
     (u) => u.username === username.value && u.password === password.value,
   );
 
-  const validUser = "tinh1";
-  const validPassword = "123";
-
-  if (
-    (username.value === validUser && password.value === validPassword) ||
-    foundUser
-  ) {
+  if (foundUser) {
     localStorage.setItem("isLoggedIn", "true");
-    localStorage.setItem("username", username.value);
+    localStorage.setItem("currentUser", JSON.stringify(foundUser));
     router.push("/");
   } else {
     errorMessage.value = "Sai tên đăng nhập hoặc mật khẩu!";

@@ -28,11 +28,11 @@
             </router-link>
           </li>
 
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <router-link class="nav-link" to="/events">
               <i class="fa-solid fa-calendar-days"></i> Sự kiện
             </router-link>
-          </li>
+          </li> -->
 
           <li class="nav-item">
             <router-link class="nav-link" to="/post-create">
@@ -66,14 +66,14 @@
                 </router-link>
               </li>
               <li>
-                <router-link class="dropdown-item" to="/forgotPassword">
-                  <i class="fa-solid fa-unlock"></i> Quên mật khẩu
+                <router-link class="dropdown-item" to="/change-password">
+                  <i class="fa-solid fa-unlock"></i> Đổi mật khẩu
                 </router-link>
               </li>
               <li>
-                <router-link class="dropdown-item" to="/profile">
+                <!-- <router-link class="dropdown-item" to="/profile">
                   <i class="fa-solid fa-address-book"></i> Thông tin cá nhân
-                </router-link>
+                </router-link> -->
               </li>
             </ul>
           </li>
@@ -81,12 +81,10 @@
 
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <router-link class="nav-link" to="/vietnamese"
-              >Tiếng Việt</router-link
-            >
+            <a class="nav-link text-white dropdown-item">Tiếng Việt</a>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/english">English</router-link>
+            <a class="nav-link text-white dropdown-item">English</a>
           </li>
         </ul>
       </div>
@@ -119,6 +117,7 @@ import router from "../router";
 
 function logout() {
   localStorage.removeItem("isLoggedIn");
+  localStorage.removeItem("currentUser");
   router.push("/");
 }
 </script>

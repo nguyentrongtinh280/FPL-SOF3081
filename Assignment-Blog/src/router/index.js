@@ -5,6 +5,7 @@ import Login from "../components/Login.vue";
 import postCreate from "../components/PostCreate.vue";
 import Register from "../components/Register.vue";
 import PostDetail from "../components/PostDetail.vue";
+import ChangePassword from "../components/ChangePassword.vue";
 
 const routes = [
   {
@@ -37,6 +38,11 @@ const routes = [
     component: PostDetail,
     meta: { layout: "default" },
   },
+  {
+    path: "/change-password",
+    component: ChangePassword,
+    meta: { layout: "auth", requiresAuth: true },
+  },
 ];
 
 const router = createRouter({
@@ -50,7 +56,7 @@ router.beforeEach((to, from, next) => {
   if (to.meta.requiresAuth && !isLoggedIn) {
     next("/login");
   } else if (to.path === "/login" && isLoggedIn) {
-    next("/post-create");
+    next("/");
   } else {
     next();
   }
