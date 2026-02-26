@@ -28,15 +28,15 @@
             </router-link>
           </li>
 
-          <!-- <li class="nav-item">
-            <router-link class="nav-link" to="/events">
-              <i class="fa-solid fa-calendar-days"></i> Sự kiện
-            </router-link>
-          </li> -->
-
           <li class="nav-item">
             <router-link class="nav-link" to="/post-create">
               <i class="fa-solid fa-pen-to-square"></i> Đăng bài
+            </router-link>
+          </li>
+
+          <li class="nav-item">
+            <router-link class="nav-link" to="/thong-ke">
+              <i class="fa-solid fa-chart-column"></i> Thống kê
             </router-link>
           </li>
 
@@ -80,11 +80,24 @@
         </ul>
 
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link text-white dropdown-item">Tiếng Việt</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white dropdown-item">English</a>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+            >
+              <i class="fa-solid fa-earth-americas"></i> Ngôn ngữ
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" to="/login"> Tiếng Việt </a>
+              </li>
+
+              <li>
+                <a class="dropdown-item" to="/register"> Tiếng anh </a>
+              </li>
+            </ul>
           </li>
         </ul>
       </div>

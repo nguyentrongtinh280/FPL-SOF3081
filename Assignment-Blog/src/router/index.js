@@ -6,6 +6,7 @@ import postCreate from "../components/PostCreate.vue";
 import Register from "../components/Register.vue";
 import PostDetail from "../components/PostDetail.vue";
 import ChangePassword from "../components/ChangePassword.vue";
+import ThongKe from "../components/ThongKe.vue";
 
 const routes = [
   {
@@ -42,6 +43,11 @@ const routes = [
     path: "/change-password",
     component: ChangePassword,
     meta: { layout: "auth", requiresAuth: true },
+  },
+  {
+    path: "/thong-ke",
+    component: ThongKe,
+    meta: { layout: "default", requiresAuth: true },
   },
 ];
 

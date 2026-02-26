@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4 mb-4">
-          <h5 class="fw-bold">DotBlog</h5>
+          <h5 class="fw-bold">MyBlog</h5>
           <p>
             Nơi chia sẻ kiến thức, trải nghiệm và câu chuyện giúp nâng cao sức
             khỏe và cân bằng cuộc sống.
@@ -26,12 +26,17 @@
                 >Đăng bài</router-link
               >
             </li>
+            <li>
+              <router-link class="footer-link" to="/thong-ke"
+                >Thống kê</router-link
+              >
+            </li>
           </ul>
         </div>
 
         <div class="col-md-4 mb-4">
           <h6 class="fw-bold">Kết nối với chúng tôi</h6>
-          <p>Email: support@dotBlog.com</p>
+
           <div>
             <a
               href="https://www.facebook.com/"
@@ -65,7 +70,7 @@
         </div>
       </div>
       <hr class="border-secondary" />
-      <div class="text-center small">Trường cao đẳng FPT Polytechnic</div>
+      <div class="text-center small">FPT Polytechnic</div>
     </div>
   </footer>
 </template>
