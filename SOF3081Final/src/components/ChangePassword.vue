@@ -3,7 +3,7 @@
     <div class="card login-card shadow-lg">
       <div class="row g-0">
         <div class="col-md-12 login-right">
-          <h3 class="text-center fw-bold mb-4 text-primary">Đổi mật khẩu</h3>
+          <h2 class="text-center fw-bold mb-4 text-primary">Đổi mật khẩu</h2>
           <form @submit.prevent="handleSubmit" novalidate>
             <div class="mb-3 position-relative">
               <i class="fa-solid fa-key input-icon"></i>
@@ -46,7 +46,7 @@
             <div class="d-grid mb-3">
               <button class="btn btn-success text-white">Cập nhật</button>
             </div>
-            <div v-if="errorMessage" class="text-danger text-center">
+            <div v-if="errorMessage" class="text-danger text-center mt-3">
               {{ errorMessage }}
             </div>
           </form>
@@ -61,7 +61,6 @@ import { ref } from "vue";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
-const username = ref("");
 const oldPassword = ref("");
 const password = ref("");
 const confirmPassword = ref("");

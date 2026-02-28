@@ -34,7 +34,7 @@
             <div class="mb-3 position-relative">
               <i class="fa-solid fa-envelope input-icon"></i>
               <input
-                type="text"
+                type="email"
                 class="form-control"
                 v-model="email"
                 placeholder="Email"
@@ -82,7 +82,7 @@
                 Đăng nhập
               </router-link>
             </div>
-            <div v-if="errorMessage" class="text-danger text-center">
+            <div v-if="errorMessage" class="text-danger text-center mt-3">
               {{ errorMessage }}
             </div>
           </form>
@@ -97,6 +97,8 @@ import { ref } from "vue";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
+const fullname = ref("");
+const email = ref("");
 const username = ref("");
 const password = ref("");
 const confirmPassword = ref("");
@@ -106,7 +108,13 @@ const errorMessage = ref("");
 function handleSubmit() {
   submitted.value = true;
   errorMessage.value = "";
-  if (!username.value || !password.value || !confirmPassword.value) {
+  if (
+    !username.value ||
+    !password.value ||
+    !confirmPassword.value ||
+    !fullname.value ||
+    !email.value
+  ) {
     return;
   }
 
@@ -116,18 +124,28 @@ function handleSubmit() {
   }
 
   const users = JSON.parse(localStorage.getItem("users")) || [];
+
   const userExists = users.find((u) => u.username === username.value);
   if (userExists) {
     errorMessage.value = "Tên đăng nhập đã tồn tại!";
     return;
   }
+
+  const emailExists = users.find((u) => u.email === email.value);
+  if (emailExists) {
+    errorMessage.value = "Email đã tồn tại!";
+    return;
+  }
+
   users.push({
+    fullname: fullname.value,
     username: username.value,
+    email: email.value,
     password: password.value,
   });
 
   localStorage.setItem("users", JSON.stringify(users));
-  alert("Đăng ký thành công!");
+  alert("Đăng ký tài khoản thành công!");
   router.push("/login");
 }
 </script>

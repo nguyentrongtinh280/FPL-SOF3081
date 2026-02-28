@@ -51,7 +51,7 @@
               </button>
             </div>
 
-            <div v-if="errorMessage" class="text-danger text-center">
+            <div v-if="errorMessage" class="text-danger text-center mt-3">
               {{ errorMessage }}
             </div>
           </form>
@@ -109,7 +109,7 @@ const handleSubmit = () => {
   width: 500px;
   border-radius: 15px;
   overflow: hidden;
-  height: 410px;
+  height: 430px;
 }
 
 .login-right {
