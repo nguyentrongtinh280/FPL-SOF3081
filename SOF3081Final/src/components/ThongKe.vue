@@ -8,9 +8,9 @@
       <div class="card-body">
         <div class="row text-center">
           <div class="col-md-4">
-            <div class="card p-3 shadow-sm border-success">
-              <h6 class="text-muted">Tổng số bài viết</h6>
-              <h2 class="text-success">{{ totalPosts }}</h2>
+            <div class="card p-3 shadow-sm border-warning">
+              <h6 class="text-muted">Tổng số sản phẩm</h6>
+              <h2 class="text-success">{{ totalProducts }}</h2>
             </div>
           </div>
 
@@ -21,12 +21,6 @@
             </div>
           </div>
         </div>
-
-        <div class="mt-4">
-          <router-link to="/" class="btn btn-secondary">
-            <i class="fa-solid fa-arrow-left"></i> Quay lại trang chủ
-          </router-link>
-        </div>
       </div>
     </div>
   </div>
@@ -34,11 +28,13 @@
 
 <script setup>
 import { computed } from "vue";
-import { posts2 } from "../data/postData";
-
-const totalPosts = computed(() => posts2.length);
 const totalUsers = computed(() => {
   const users = JSON.parse(localStorage.getItem("users")) || [];
   return users.length;
+});
+
+const totalProducts = computed(() => {
+  const products = JSON.parse(localStorage.getItem("products")) || [];
+  return products.length;
 });
 </script>

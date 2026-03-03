@@ -1,11 +1,13 @@
 <template>
-  <Navbar v-if="showLayout" />
+  <div class="layout-wrapper">
+    <Navbar v-if="showLayout" />
 
-  <main :class="showLayout ? 'pt-5' : ''">
-    <router-view />
-  </main>
+    <main class="flex-fill" :class="showLayout ? 'pt-5' : ''">
+      <router-view />
+    </main>
 
-  <Footer v-if="showLayout" />
+    <Footer v-if="showLayout" />
+  </div>
 </template>
 
 <script setup>
@@ -21,3 +23,15 @@ const showLayout = computed(() => {
   return route.meta.layout !== "auth";
 });
 </script>
+
+<style setup>
+.layout-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-fill {
+  flex: 1;
+}
+</style>

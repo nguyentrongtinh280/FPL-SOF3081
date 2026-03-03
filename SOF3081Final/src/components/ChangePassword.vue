@@ -114,7 +114,7 @@ function handleSubmit() {
   width: 500px;
   border-radius: 15px;
   overflow: hidden;
-  height: 380px;
+  height: 390px;
 }
 
 .login-right {

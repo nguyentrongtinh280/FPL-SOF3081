@@ -4,6 +4,7 @@ import Login from "../components/Login.vue";
 import Register from "../components/Register.vue";
 import ChangePassword from "../components/ChangePassword.vue";
 import ThongKe from "../components/ThongKe.vue";
+import Product from "../components/Product.vue";
 
 const routes = [
   {
@@ -29,6 +30,11 @@ const routes = [
   {
     path: "/thong-ke",
     component: ThongKe,
+    meta: { layout: "default", requiresAuth: true },
+  },
+  {
+    path: "/product",
+    component: Product,
     meta: { layout: "default", requiresAuth: true },
   },
 ];
