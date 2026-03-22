@@ -1,5 +1,5 @@
 <template>
-  <div class="container mt-4 pt-5">
+  <!-- <div class="container mt-4 pt-5">
     <div id="carouseExampleDark" class="carousel slide carousel-dark">
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -29,9 +29,10 @@
         <span class="carousel-control-next-icon"></span>
       </button>
     </div>
-  </div>
+  </div> -->
+  <br /><br /><br /><br />
 
-  <div class="container mt-4">
+  <div class="container mt-4 pt-5">
     <h1 class="text-primary text-center fw-bold">
       Chào mừng đến với trang chủ
     </h1>

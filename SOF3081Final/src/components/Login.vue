@@ -44,12 +44,15 @@
                 Đăng ký
               </router-link>
             </div>
+            <br />
 
-            <div class="d-grid mt-3">
+            <!-- <div class="d-grid mt-3">
               <button class="btn btn-danger text-white fw-bold">
                 <i class="fa-brands fa-google"></i> Đăng nhập với google
               </button>
-            </div>
+            </div> -->
+
+            <!-- <div id="googleBtn"></div> -->
 
             <div v-if="errorMessage" class="text-danger text-center mt-3">
               {{ errorMessage }}
@@ -66,6 +69,7 @@ import { ref } from "vue";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
+
 const username = ref("");
 const password = ref("");
 const submitted = ref(false);
@@ -78,20 +82,31 @@ const handleSubmit = () => {
   if (!username.value || !password.value) {
     return;
   }
+  if (username.value === "tula" && password.value === "123") {
+    const adminUser = {
+      username: "tula",
+      role: "admin",
+    };
 
-  const users = JSON.parse(localStorage.getItem("users")) || [];
-
-  const foundUser = users.find(
-    (u) => u.username === username.value && u.password === password.value,
-  );
-
-  if (foundUser) {
     localStorage.setItem("isLoggedIn", "true");
-    localStorage.setItem("currentUser", JSON.stringify(foundUser));
+    localStorage.setItem("currentUser", JSON.stringify(adminUser));
+
     router.push("/");
-  } else {
-    errorMessage.value = "Sai tên đăng nhập hoặc mật khẩu!";
+    return;
   }
+  if (username.value === "tinh15" && password.value === "123") {
+    const normalUser = {
+      username: "tinh15",
+      role: "user",
+    };
+
+    localStorage.setItem("isLoggedIn", "true");
+    localStorage.setItem("currentUser", JSON.stringify(normalUser));
+
+    router.push("/");
+    return;
+  }
+  errorMessage.value = "Sai tên đăng nhập hoặc mật khẩu!";
 };
 </script>
 
@@ -109,7 +124,7 @@ const handleSubmit = () => {
   width: 500px;
   border-radius: 15px;
   overflow: hidden;
-  height: 430px;
+  height: 350px;
 }
 
 .login-right {

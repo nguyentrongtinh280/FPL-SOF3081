@@ -5,7 +5,8 @@ import Register from "../components/Register.vue";
 import ChangePassword from "../components/ChangePassword.vue";
 import ThongKe from "../components/ThongKe.vue";
 import Product from "../components/Product.vue";
-
+import CongViec from "../components/CongViec.vue";
+import CongViecList from "../components/CongViecList.vue";
 const routes = [
   {
     path: "/",
@@ -37,6 +38,18 @@ const routes = [
     component: Product,
     meta: { layout: "default", requiresAuth: true },
   },
+
+  {
+    path: "/cong-viec",
+    component: CongViec,
+    meta: { layout: "default", requiresAuth: true, role: "admin" },
+  },
+
+  {
+    path: "/danh-sach-cong-viec",
+    component: CongViecList,
+    meta: { layout: "default", requiresAuth: true },
+  },
 ];
 
 const router = createRouter({
@@ -46,14 +59,23 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   const isLoggedIn = localStorage.getItem("isLoggedIn");
-
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
   if (to.meta.requiresAuth && !isLoggedIn) {
-    next("/login");
-  } else if (to.path === "/login" && isLoggedIn) {
-    next("/");
-  } else {
-    next();
+    return next("/login");
   }
+
+  if (to.path === "/login" && isLoggedIn) {
+    next("/");
+  }
+
+  if (to.meta.role) {
+    if (!currentUser || currentUser.role !== to.meta.role) {
+      alert("Bạn không có quyền truy cập vào quản lý công việc!");
+      return next("/");
+    }
+  }
+
+  next();
 });
 
 export default router;

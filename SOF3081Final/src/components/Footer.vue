@@ -3,12 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4 mb-4">
-          <h5 class="fw-bold">Quản lý sản phẩm</h5>
-          <p>
-            Sản phẩm là bất cứ cái gì có thể đưa vào thị trường để tạo sự chú ý,
-            mua sắm, sử dụng hay tiêu dùng nhằm thỏa mãn một nhu cầu hay ước
-            muốn.
-          </p>
+          <h5 class="fw-bold">Quản lý công việc</h5>
         </div>
 
         <div class="col-md-4 mb-4">
@@ -18,15 +13,20 @@
               <router-link class="footer-link" to="/">Trang chủ</router-link>
             </li>
             <li>
-              <router-link class="footer-link" to="/product"
-                >Sản Phẩm</router-link
+              <router-link class="footer-link" to="/cong-viec"
+                >Công việc</router-link
               >
             </li>
             <li>
+              <router-link class="footer-link" to="/danh-sach-cong-viec"
+                >Danh sách công việc</router-link
+              >
+            </li>
+            <!-- <li>
               <router-link class="footer-link" to="/thong-ke"
                 >Thống kê</router-link
               >
-            </li>
+            </li> -->
           </ul>
         </div>
 

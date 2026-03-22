@@ -22,17 +22,29 @@
             </router-link>
           </li>
 
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <router-link class="nav-link" to="/product">
               <i class="fa-solid fa-pen-to-square"></i> Sản Phẩm
+            </router-link>
+          </li> -->
+
+          <li class="nav-item">
+            <router-link class="nav-link" to="/cong-viec">
+              <i class="fa-solid fa-pen-to-square"></i> Công việc
             </router-link>
           </li>
 
           <li class="nav-item">
+            <router-link class="nav-link" to="/danh-sach-cong-viec">
+              <i class="fa-solid fa-pen-to-square"></i> Danh sách công việc
+            </router-link>
+          </li>
+
+          <!-- <li class="nav-item">
             <router-link class="nav-link" to="/thong-ke">
               <i class="fa-solid fa-chart-column"></i> Thống kê
             </router-link>
-          </li>
+          </li> -->
 
           <li class="nav-item dropdown">
             <a
@@ -54,7 +66,7 @@
                   <i class="fa-solid fa-left-long"></i> Đăng xuất
                 </button>
               </li>
-              <li>
+              <!-- <li>
                 <router-link class="dropdown-item" to="/register">
                   <i class="fa-solid fa-user-plus"></i> Đăng ký
                 </router-link>
@@ -63,7 +75,7 @@
                 <router-link class="dropdown-item" to="/change-password">
                   <i class="fa-solid fa-unlock"></i> Đổi mật khẩu
                 </router-link>
-              </li>
+              </li> -->
             </ul>
           </li>
         </ul>
